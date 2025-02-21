@@ -1,0 +1,43 @@
+const page = async (props: {
+  searchParams: Promise<{
+    taskID: any;
+    part_number: any;
+    description: any;
+    status: any;
+  }>;
+}) => {
+  const searchParams = await props.searchParams;
+  console.log(searchParams);
+  const taskID = searchParams.taskID;
+  const part_number = searchParams.part_number;
+  const description = searchParams.description;
+  const status = searchParams.status;
+  // heare should be try write code for sql query prisma after sh1 script
+  // or will make saparate component
+  return (
+    <div className="pl-5 pr-5">
+      <table className="  mt-20 table-auto w-full border-collapse border border-gray-400 text-left">
+        <thead className="">
+          <tr>
+            <th className="border border-gray-400 px-4 py-2">Task ID</th>
+            <th className="border border-gray-400 px-4 py-2">Part Number</th>
+            <th className="border border-gray-400 px-4 py-2">Description</th>
+            <th className="border border-gray-400 px-4 py-2">Status</th>
+            <th className="border border-gray-400 px-4 py-2">Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="border border-gray-400 px-4 py-2">{taskID}</td>
+            <td className="border border-gray-400 px-4 py-2">{part_number}</td>
+            <td className="border border-gray-400 px-4 py-2">{description}</td>
+            <td className="border border-gray-400 px-4 py-2">{status}</td>
+            <td className="border border-gray-400 px-4 py-2">{"cost 188£"}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default page;
