@@ -14,20 +14,34 @@ const Cost = async ({
   status: any;
 }) => {
   const LongQueryCost = await getManufacturedPartsCosting(part_number, 0);
-  const roundedNumber = Number(LongQueryCost.toFixed(2));
+  // const roundedNumber = Number(LongQueryCost.toFixed(2));
 
   // here sql logic
   const item = await claimItemCost({ part_number, taskID });
-  // console.log(item);
-  // console.log(item[0].cost);
 
-  const cost = "178";
+  // const cost = "178";
   // generate excel file here
-  generateFile({ taskID, part_number, description, status, cost });
+  const data = [
+    {
+      taskID: taskID,
+      part_number: part_number,
+      description: description,
+      status: status,
+      cost: LongQueryCost,
+    },
+  ];
+  // console.log(data);
+
+  // await generateFile(data);
+
   return (
     <>
-      <div>{<p>{roundedNumber}£</p>}</div>
+      <div>{<p>{LongQueryCost}£</p>}</div>
       {/* <div>{<p>{item?.cost || item[0]?.cost}£</p>}</div> */}
+      <form action="/api/export" method="POST">
+        <input type="hidden" name="data" value={JSON.stringify(data)} />
+        <button type="submit">Download Excel</button>
+      </form>
     </>
   );
 };
