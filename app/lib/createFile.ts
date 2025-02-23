@@ -54,8 +54,12 @@ export async function generateFile(data: any[]) {
 
     // Write the workbook to a buffer
     const buffer = XLSX.write(wb, { type: "buffer", bookType: "xlsx" });
+    // Generate the file name from the first row's description
+    const fileName = data[0]?.description
+      ? `${data[0].description.replace(/[^a-zA-Z0-9]/g, "_")}.xlsx` // Replace special characters with underscores
+      : "table_data.xlsx"; // Fallback name
 
-    return buffer;
+    return { buffer, fileName };
   } catch (error) {
     console.error("Error generating Excel file:", error);
     throw new Error("Failed to generate Excel file");

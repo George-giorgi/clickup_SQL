@@ -18,7 +18,8 @@ export async function POST(request: Request) {
 
     // Parse the decoded string as JSON
     const data = JSON.parse(dataString);
-    const buffer = await generateFile(data);
+    // Generate the Excel file and get the file name
+    const { buffer, fileName } = await generateFile(data);
 
     // Return the Excel file as a downloadable response
     // const buffer = "gioo";
@@ -26,7 +27,7 @@ export async function POST(request: Request) {
 
     return new NextResponse(buffer, {
       headers: {
-        "Content-Disposition": 'attachment; filename="table_data.xlsx"',
+        "Content-Disposition": `attachment; filename="${fileName}"`,
         "Content-Type":
           "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
       },
