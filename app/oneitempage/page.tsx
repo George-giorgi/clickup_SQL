@@ -1,3 +1,6 @@
+import Cost from "../ui/Cost";
+import Link from "next/link";
+
 const page = async (props: {
   searchParams: Promise<{
     taskID: any;
@@ -7,7 +10,7 @@ const page = async (props: {
   }>;
 }) => {
   const searchParams = await props.searchParams;
-  console.log(searchParams);
+
   const taskID = searchParams.taskID;
   const part_number = searchParams.part_number;
   const description = searchParams.description;
@@ -32,10 +35,21 @@ const page = async (props: {
             <td className="border border-gray-400 px-4 py-2">{part_number}</td>
             <td className="border border-gray-400 px-4 py-2">{description}</td>
             <td className="border border-gray-400 px-4 py-2">{status}</td>
-            <td className="border border-gray-400 px-4 py-2">{"cost 188£"}</td>
+            <td className="border border-gray-400 px-4 py-2">
+              {/* we need all prop due to generate file in futura and part_number tu pick up cost from sqlserver */}
+              <Cost
+                description={description}
+                status={status}
+                taskID={taskID}
+                part_number={part_number}
+              />
+            </td>
           </tr>
         </tbody>
       </table>
+      <Link href={"/itemlist"}>
+        <p className=" mt-10 text-red-300">go to items page</p>
+      </Link>
     </div>
   );
 };

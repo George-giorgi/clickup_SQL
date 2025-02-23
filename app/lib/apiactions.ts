@@ -21,6 +21,8 @@ async function fetchgetTasks() {
 
     // all tasks [{},{},{},{}]
     const tasks = response.data.tasks;
+    // console.log(tasks);
+
     const combinedResults = tasks.map((task: any) => {
       const contractField = task.custom_fields.find(
         (field: any) => field.name === "Rwk: Contract Number / PO"

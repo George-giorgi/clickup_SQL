@@ -6,9 +6,9 @@ const TasksComponent = async () => {
   const data = await fetchgetTasks();
   // console.log(data);
 
-  const handleCklick = (itemNumber: any) => {
-    console.log(itemNumber);
-  };
+  // const handleCklick = (itemNumber: any) => {
+  //   console.log(itemNumber);
+  // };
 
   return (
     <>
