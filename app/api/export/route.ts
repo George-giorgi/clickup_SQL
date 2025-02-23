@@ -6,7 +6,6 @@ export async function POST(request: Request) {
   try {
     // Parse the request body to get the data
     const body = await request.text();
-    console.log(body);
 
     // Decode the URL-encoded body
     const params = new URLSearchParams(body);

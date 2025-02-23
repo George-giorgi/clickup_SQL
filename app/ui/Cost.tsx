@@ -38,10 +38,12 @@ const Cost = async ({
     <>
       <div>{<p>{LongQueryCost}£</p>}</div>
       {/* <div>{<p>{item?.cost || item[0]?.cost}£</p>}</div> */}
-      <form action="/api/export" method="POST">
-        <input type="hidden" name="data" value={JSON.stringify(data)} />
-        <button type="submit">Download Excel</button>
-      </form>
+      <div className=" absolute top-7 bg-slate-900 font-semibold p-2 rounded-xl">
+        <form action="/api/export" method="POST">
+          <input type="hidden" name="data" value={JSON.stringify(data)} />
+          <button type="submit">Download Excel</button>
+        </form>
+      </div>
     </>
   );
 };

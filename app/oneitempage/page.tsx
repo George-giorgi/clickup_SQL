@@ -1,5 +1,6 @@
 import Cost from "../ui/Cost";
 import Link from "next/link";
+import LeftArrow from "../ui/leftArrow";
 
 const page = async (props: {
   searchParams: Promise<{
@@ -47,10 +48,14 @@ const page = async (props: {
           </tr>
         </tbody>
       </table>
-
-      <Link href={"/itemlist"}>
-        <p className=" mt-10 text-red-300">go to items page</p>
-      </Link>
+      <div>
+        <Link href={"/itemlist"}>
+          <div className=" flex mt-10 gap-2 items-center">
+            <LeftArrow />
+            <p className=" font-semibold  ">Back to items page</p>
+          </div>
+        </Link>
+      </div>
     </div>
   );
 };
