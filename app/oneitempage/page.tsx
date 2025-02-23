@@ -3,10 +3,10 @@ import Link from "next/link";
 
 const page = async (props: {
   searchParams: Promise<{
-    taskID: any;
-    part_number: any;
-    description: any;
-    status: any;
+    taskID?: any;
+    part_number?: any;
+    description?: any;
+    status?: any;
   }>;
 }) => {
   const searchParams = await props.searchParams;
@@ -47,6 +47,7 @@ const page = async (props: {
           </tr>
         </tbody>
       </table>
+
       <Link href={"/itemlist"}>
         <p className=" mt-10 text-red-300">go to items page</p>
       </Link>

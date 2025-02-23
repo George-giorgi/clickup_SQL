@@ -20,3 +20,35 @@ model ItemCost {
   taskId      String  @unique
 }
 
+
+model Item {
+  PartNo         String @unique // Ensure PartNo is unique
+  Rev            Int
+  Weight         Float?
+  Length         Float?
+  MaterialStandard String?
+  SourceCost     Float? 
+  Material       Material? @relation(fields: [MaterialStandard], references: [PartNo])
+  CreatedAt      DateTime @default(now())
+  UpdatedAt      DateTime @updatedAt
+
+  @@id([PartNo, Rev]) // Composite primary key
+}
+
+model Material {
+  PartNo         String @id @unique // Ensure PartNo is unique and primary key
+  MaterialClass  String
+  Dim1           Float?
+  Dim2           Float?
+  Dim3           Float?
+  Dim4           Float?
+  MassDensity    Float?
+  Items          Item[]
+}
+
+
+
+
+
+
+

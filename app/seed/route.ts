@@ -1,4 +1,5 @@
 import prisma from "@/app/lib/prisma";
+import { insertRandomData, partNumbers } from "../lib/seed";
 const items = [
   { id: "86981tt7h", part_number: "2417773 / 2417719" },
   { id: "86981qmb2", part_number: "2417792" },
@@ -66,30 +67,33 @@ const items = [
   { id: "8697zk4mz", part_number: "2417786" },
   { id: "8697zhthw", part_number: "2417793" },
 ];
-
+const getRandomValue = (min: number, max: number) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 export async function GET() {
   try {
-    const partNumberCostMap = new Map();
+    // await insertRandomData(partNumbers);
+    // const partNumberCostMap = new Map();
 
-    for (const item of items) {
-      let cost;
+    // for (const item of items) {
+    //   let cost;
 
-      if (partNumberCostMap.has(item.part_number)) {
-        cost = partNumberCostMap.get(item.part_number);
-      } else {
-        cost = Math.floor(Math.random() * 500) + 50; // Random cost between 50-550
-        partNumberCostMap.set(item.part_number, cost);
-      }
+    //   if (partNumberCostMap.has(item.part_number)) {
+    //     cost = partNumberCostMap.get(item.part_number);
+    //   } else {
+    //     cost = Math.floor(Math.random() * 500) + 50; // Random cost between 50-550
+    //     partNumberCostMap.set(item.part_number, cost);
+    //   }
 
-      // await prisma.itemCost.create({
-      //   data: {
-      //     taskId: item.id,
-      //     part_number: item.part_number,
-      //     cost,
-      //   },
-      // });
-    }
-    // await prisma.itemCost.deleteMany({});
+    //   // await prisma.itemCost.create({
+    //   //   data: {
+    //   //     taskId: item.id,
+    //   //     part_number: item.part_number,
+    //   //     cost,
+    //   //   },
+    //   // });
+    // }
+    // // await prisma.itemCost.deleteMany({});
     console.log("Items seeed secsessfuly");
     return Response.json({
       message: "Database seeded successfully",

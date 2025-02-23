@@ -42,8 +42,8 @@ const OneItem = ({
       <span
         // onClick={() => handleCklick(each.id)}
         className={` ${
-          markitem == part_number && "bg-red-600"
-        } hover:bg-yellow-500 transition-all w-max h-20 pl-3 pr-3 flex items-center justify-center rounded-full bg-blue-500 text-white text-sm cursor-pointer`}
+          markitem == part_number ? "bg-red-600" : "bg-white/10"
+        } text-white backdrop-blur-md  px-4 py-1 w-fit rounded-lg transition-colors duration-300 hover:text-blue-400 cursor-pointer`}
         onClick={() => handleClick(part_number)}
       >
         {part_number} &nbsp; {taskID}

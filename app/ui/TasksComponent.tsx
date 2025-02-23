@@ -13,7 +13,7 @@ const TasksComponent = async () => {
   return (
     <>
       <Input />
-      <div className=" flex flex-wrap gap-3 mt-10">
+      <div className=" flex flex-wrap gap-3 mt-10 ml-5 mr-5">
         {data.map((each: any) => {
           return (
             <div className="" key={each.id}>
