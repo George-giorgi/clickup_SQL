@@ -1,3 +1,9 @@
+import TaskList from "./fetch-update-component/TaskList";
+
 export default function Home() {
-  return <div className=" bg-green-300">Hello world</div>;
+  return (
+    <div className=" ">
+      <TaskList />
+    </div>
+  );
 }
