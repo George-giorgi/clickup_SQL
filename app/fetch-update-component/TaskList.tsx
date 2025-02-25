@@ -27,8 +27,9 @@ const TaskList = () => {
   const fetchTasks = async () => {
     console.log("Fetching tasks...");
     try {
-      const response = await fetch("/api/fetch-update", { cache: "no-store" }); // Ensure fresh data
+      const response = await fetch("/api/fetchupdate", { cache: "no-store" }); // Ensure fresh data
       const data = await response.json();
+      console.log(response);
 
       if (response.ok) {
         setTasks(data);
@@ -45,17 +46,15 @@ const TaskList = () => {
 
   useEffect(() => {
     fetchTasks(); // Initial fetch
-
-    // const interval = setInterval(() => {
-    //   console.log("Refreshing page and fetching new data...");
-    //   router.refresh(); // Refresh the page
-    //   fetchTasks(); // Fetch new data again after refresh
-    // }, 15000); // Refresh every 15 seconds
-
-    // return () => {
-    //   console.log("Cleaning up interval...");
-    //   clearInterval(interval);
-    // };
+    const interval = setInterval(() => {
+      console.log("Refreshing page and fetching new data...");
+      router.refresh(); // Refresh the page
+      fetchTasks(); // Fetch new data again after refresh
+    }, 15000); // Refresh every 15 seconds
+    return () => {
+      console.log("Cleaning up interval...");
+      clearInterval(interval);
+    };
   }, [router]); // Depend on router to prevent unnecessary re-renders
 
   if (loading) {
@@ -88,24 +87,24 @@ const TaskList = () => {
           </tr>
         </thead>
         <tbody>
-          {tasks.map((task) => (
-            <tr key={task.id} className="">
+          {tasks.map((task, i) => (
+            <tr key={task?.id || i} className="">
               <td className="border border-gray-300 px-4 py-2 font-semibold">
-                {task.name}
+                {task?.name || "Unknown"}
               </td>
               <td className="border border-gray-300 px-4 py-2">
                 <span
                   className={`px-2 py-1 text-sm font-medium rounded ${
-                    task.status === "completed"
+                    task?.status === "completed"
                       ? "bg-green-200 text-green-700"
                       : "bg-yellow-200 text-yellow-700"
                   }`}
                 >
-                  {task.status}
+                  {task?.status}
                 </span>
               </td>
               <td className="border border-gray-300 px-4 py-2">
-                {task.customFields.length > 0 ? (
+                {task?.customFields.length > 0 ? (
                   <ul className="list-disc pl-4">
                     {task.customFields.map((field) => (
                       <li key={field.id}>

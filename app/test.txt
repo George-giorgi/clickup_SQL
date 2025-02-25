@@ -1,0 +1,2 @@
+brew install unixodbc
+isql -v "Driver=ODBC Driver 17 for SQL Server;Server=dungannon.mallaghangroup.com;Uid=automate.io;Pwd=Sense-Allow-Fifth5;"
