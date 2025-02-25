@@ -46,15 +46,15 @@ const TaskList = () => {
 
   useEffect(() => {
     fetchTasks(); // Initial fetch
-    const interval = setInterval(() => {
-      console.log("Refreshing page and fetching new data...");
-      router.refresh(); // Refresh the page
-      fetchTasks(); // Fetch new data again after refresh
-    }, 15000); // Refresh every 15 seconds
-    return () => {
-      console.log("Cleaning up interval...");
-      clearInterval(interval);
-    };
+    // const interval = setInterval(() => {
+    //   console.log("Refreshing page and fetching new data...");
+    //   router.refresh(); // Refresh the page
+    //   fetchTasks(); // Fetch new data again after refresh
+    // }, 15000); // Refresh every 15 seconds
+    // return () => {
+    //   console.log("Cleaning up interval...");
+    //   clearInterval(interval);
+    // };
   }, [router]); // Depend on router to prevent unnecessary re-renders
 
   if (loading) {

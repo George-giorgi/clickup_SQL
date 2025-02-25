@@ -70,7 +70,7 @@ export async function GET() {
           (field) => field.name === "Rework Cost"
         );
 
-        const partNumber: any = partNumberField?.value || 1;
+        const partNumber: any = partNumberField?.value;
         let reworkCost = reworkCostField?.value;
 
         // If "Rwk: Part Number" exists, query the database
@@ -117,10 +117,15 @@ export async function GET() {
           }
           const resultcost_value = result.recordset[0].MaterialCost;
           // console.log(`Material cost for task ${task.id}:`, resultcost_value);
+          // console.log(resultcost_value);
 
           // If a valid material cost is returned, update "Rework Cost"
           if (result !== null && reworkCostField) {
-            await updateCustomField(task.id, reworkCostField.id, partNo);
+            await updateCustomField(
+              task.id,
+              reworkCostField.id,
+              resultcost_value
+            );
             reworkCost = resultcost_value; // Update the value in the response
           }
         }

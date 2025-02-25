@@ -1,153 +1,369 @@
 [
   {
+    "id": "869834hhg",
+    "part_number": "3232",
+    "description": "rewq",
+    "status": "pending start"
+  },
+  {
+    "id": "869833mey",
+    "part_number": "ww",
+    "description": "rrr",
+    "status": "pending start"
+  },
+  {
+    "id": "869833h4w",
+    "part_number": "212",
+    "description": "ddddd:D:DD::D",
+    "status": "pending start"
+  },
+  {
+    "id": "869833g57",
+    "part_number": "2417758",
+    "description": "HANDRAIL BRACKET",
+    "status": "pending start"
+  },
+  {
+    "id": "8698334dr",
+    "part_number": "2417758",
+    "description": "SPACER",
+    "status": "pending start"
+  },
+  {
+    "id": "869831pr0",
+    "part_number": "3332",
+    "description": "ededeeee",
+    "status": "pending start"
+  },
+  {
+    "id": "869831n59",
+    "part_number": "wefewf",
+    "description": "xxwqxqw",
+    "status": "pending start"
+  },
+  {
+    "id": "869831kff",
+    "part_number": "ddd",
+    "description": "fff",
+    "status": "pending start"
+  },
+  {
+    "id": "869830ybr",
+    "part_number": "2317680",
+    "description": "FRONT WHEEL SENSOR pickup",
+    "status": "pending start"
+  },
+  {
+    "id": "8698308th",
+    "part_number": "2417771",
+    "description": "TOE BOARD BOLTING PLATE ",
+    "status": "pending start"
+  },
+  {
+    "id": "8698306gr",
+    "part_number": "2417776",
+    "description": "energy chain bracket ",
+    "status": "pending start"
+  },
+  {
+    "id": "86982zwtg",
+    "part_number": "332",
+    "description": "finally ? : ))",
+    "status": "pending start"
+  },
+  {
+    "id": "86982ykpf",
+    "part_number": "N/A",
+    "description": "Roller skate modification pin",
+    "status": "pending start"
+  },
+  {
+    "id": "86982ykcw",
+    "part_number": "1816982",
+    "description": "Scissor Assembly",
+    "status": "pending start"
+  },
+  {
+    "id": "86982xzb4",
+    "part_number": "2417688",
+    "description": "Rear tow hitch welded",
+    "status": "cut"
+  },
+  {
+    "id": "86982xg4e",
+    "part_number": "444rr",
+    "description": "wertwww",
+    "status": "complete"
+  },
+  {
+    "id": "86982xfcw",
+    "part_number": "121s",
+    "description": "descccc",
+    "status": "complete"
+  },
+  {
+    "id": "86982x9yu",
+    "part_number": "4refefe",
+    "description": "test desc",
+    "status": "complete"
+  },
+  {
+    "id": "86982wu6x",
+    "part_number": "2417773",
+    "description": "AIR CON MESH ",
+    "status": "pending start"
+  },
+  {
+    "id": "86982u1pd",
+    "part_number": "N/A",
+    "description": "1eee",
+    "status": "complete"
+  },
+  {
+    "id": "86982u1n2",
+    "part_number": "dd1",
+    "description": "11ttt",
+    "status": "complete"
+  },
+  {
+    "id": "86982u18q",
+    "part_number": "3",
+    "description": "ioooooo",
+    "status": "complete"
+  },
+  {
+    "id": "86982u076",
+    "part_number": "N/A",
+    "description": "11ee",
+    "status": "complete"
+  },
+  {
+    "id": "86982ty8h",
+    "part_number": "321",
+    "description": "gggr",
+    "status": "complete"
+  },
+  {
+    "id": "86982tqck",
+    "part_number": "000099",
+    "description": "finaly test",
+    "status": "complete"
+  },
+  {
+    "id": "86982rtqx",
+    "part_number": "fffff",
+    "description": "22rrr",
+    "status": "complete"
+  },
+  {
+    "id": "86982rrtq",
+    "part_number": "contract number",
+    "description": "rrrr",
+    "status": "complete"
+  },
+  {
+    "id": "86982rqhc",
+    "part_number": "12312312",
+    "description": "12312312321",
+    "status": "complete"
+  },
+  {
+    "id": "86982qfjh",
+    "part_number": "2417792",
+    "description": "CABIN REAR STEP ASSEMBLY",
+    "status": "pending start"
+  },
+  {
+    "id": "86982ke03",
+    "part_number": "0915562",
+    "description": "70170X2460 3MM SSCP",
+    "status": "rip"
+  },
+  {
+    "id": "86982euz7",
+    "part_number": "N/A",
+    "description": "Beacon Brackets for blue beacons Type Hänsch Komet LED. ",
+    "status": "rip"
+  },
+  {
+    "id": "86982d3w7",
+    "part_number": "2417773",
+    "description": "LIGHT BRACKET ",
+    "status": "rip"
+  },
+  {
+    "id": "86982d2hr",
+    "part_number": "2417773",
+    "description": "SIDE DOOR SENSOR STRIKER ",
+    "status": "rip"
+  },
+  {
+    "id": "86982d1dn",
+    "part_number": "2417773",
+    "description": "door sensor striker ",
+    "status": "rip"
+  },
+  {
+    "id": "86982cygk",
+    "part_number": "2417726",
+    "description": "PIN ",
+    "status": "rip"
+  },
+  {
+    "id": "86982cw6x",
+    "part_number": "2417773",
+    "description": "HANDRAIL ",
+    "status": "rip"
+  },
+  {
     "id": "869823fex",
     "part_number": "555",
     "description": "wedwed test",
-    "status": "pending start"
+    "status": "complete"
   },
   {
     "id": "869823f03",
     "part_number": "123444",
     "description": "teeeeest",
-    "status": "pending start"
+    "status": "complete"
   },
   {
     "id": "869821uxu",
     "part_number": "123",
     "description": "test2 test2",
-    "status": "pending start"
+    "status": "complete"
   },
   {
     "id": "86981tt7h",
     "part_number": "2417773 / 2417719",
     "description": "DASH PLATE",
-    "status": "pending start"
+    "status": "cut"
   },
   {
     "id": "86981qmb2",
     "part_number": "2417792",
     "description": "fold down shelf",
-    "status": "pending start"
+    "status": "rip"
   },
   {
     "id": "86981pyz7",
     "part_number": "N/A",
     "description": "CABIN HANDRAIL ASSEMBLY",
-    "status": "pending start"
+    "status": "rip"
   },
   {
     "id": "86981pqgc",
     "part_number": "2417786",
     "description": "Spreader plate magnetic lock",
-    "status": "pending start"
+    "status": "rip"
   },
   {
     "id": "86981pp1c",
     "part_number": "2417786",
     "description": "Spreader plate magnetic lock",
-    "status": "pending start"
+    "status": "rip"
   },
   {
     "id": "86981pb0h",
     "part_number": "1616556",
     "description": "PLATFORM SIDE WING SHIM",
-    "status": "pending start"
+    "status": "rip"
   },
   {
     "id": "86981pagr",
     "part_number": "1616556",
     "description": "PLATFORM SIDE WING SHIM",
-    "status": "pending start"
+    "status": "rip"
   },
   {
     "id": "86981pa2e",
     "part_number": "1616556",
     "description": "PLATFORM SIDE WING SHIM",
-    "status": "pending start"
+    "status": "rip"
   },
   {
     "id": "86981mtf9",
     "part_number": "2417751",
     "description": "100976",
-    "status": "pending start"
+    "status": "rip"
   },
   {
     "id": "86981m7yw",
     "part_number": "N/A",
     "description": "DE-ICER - CABLE RACK - BOLT ASSEMBL",
-    "status": "pending start"
+    "status": "rip"
   },
   {
     "id": "86981kb2y",
     "part_number": "N/A",
     "description": "In-house plates for cable reel extensions. Please cut QTY's as per Part Numbers above.",
-    "status": "pending start"
+    "status": "rip"
   },
   {
     "id": "86981j91q",
     "part_number": "2417757",
     "description": "ACCESS LADDER PLATE",
-    "status": "pending start"
+    "status": "complete"
   },
   {
     "id": "86981cqae",
     "part_number": "1111",
     "description": "test test",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86981am6e",
     "part_number": "2317679",
     "description": "PAWL LOCK BRACKET - CROSS BEAM",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "869818x51",
     "part_number": "2417809 / 810",
     "description": "6 HOLE DASH PLATE",
-    "status": "rip"
+    "status": "cut"
   },
   {
     "id": "869818wat",
     "part_number": "2417809 / 810",
     "description": "IFM CONTROLLER BRACKET",
-    "status": "rip"
+    "status": "cut"
   },
   {
     "id": "869818vn9",
     "part_number": "2417809 / 2417810",
     "description": "DANFOSS CONTROLLER BRACKET",
-    "status": "rip"
+    "status": "cut"
   },
   {
     "id": "869818271",
     "part_number": "2317678",
     "description": "TAIL LIFT BUMP STOP SPACER",
-    "status": "rip"
+    "status": "ready"
   },
   {
     "id": "869816xtt",
     "part_number": "1616556",
     "description": "3M PLATFORM FLOOR TREADPLATE",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "869816x8r",
     "part_number": "1616556",
     "description": "UPPERSTAIR FLOOR TREADPLATE",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "869815mjr",
     "part_number": "2317678",
     "description": "TAIL LIFT BUMP STOP ROLLER",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "869814uxv",
     "part_number": "2417768",
     "description": "electric shutter door mounting angles",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980z1b2",
@@ -207,7 +423,7 @@
     "id": "86980y6kp",
     "part_number": "2417757",
     "description": "ACCESS LADDER (TSU3000) PLATE",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980wc17",
@@ -231,7 +447,7 @@
     "id": "86980vraw",
     "part_number": "2317679",
     "description": "CROSS BEAM WELD ASSEMBLY",
-    "status": "weld"
+    "status": "part finish"
   },
   {
     "id": "86980ug2b",
@@ -243,7 +459,7 @@
     "id": "86980rudb",
     "part_number": "N/A",
     "description": "V-MOD WASHER SPACER 3MM",
-    "status": "rip"
+    "status": "part finish"
   },
   {
     "id": "86980rtqt",
@@ -267,109 +483,109 @@
     "id": "86980pt2w",
     "part_number": "2417793",
     "description": "PS Beltloader Dash Plate and PS Beltloader Fuse Holder Extension Plate",
-    "status": "weld"
+    "status": "part finish"
   },
   {
     "id": "86980me0t",
     "part_number": "2217543/2217544",
     "description": "clamp strip",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980md6n",
     "part_number": "2217543/2217544",
     "description": "bumper",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980mc5n",
     "part_number": "2217543/2217544",
     "description": "clamp strip",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980mbfx",
     "part_number": "2217543/2217544",
     "description": "bumper",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980majx",
     "part_number": "2217543/2217544",
     "description": "clamp strip",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980m9q2",
     "part_number": "2217543/2217544",
     "description": "bumper",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980m88b",
     "part_number": "2217543/2217544",
     "description": "clamp strip",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980m7e2",
     "part_number": "2217543/2217544",
     "description": "bumper",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980m564",
     "part_number": "2217543/2217544",
     "description": "clamp strip",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980m4ce",
     "part_number": "2217543/2217544",
     "description": "bumper",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980kud2",
     "part_number": "2217543/2217544",
     "description": "clamp strip",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980kqp1",
     "part_number": "2217543/2217544",
     "description": "rubber bumper",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980kmq9",
     "part_number": "2217543/2217544",
     "description": "clamp strip",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980kfc4",
     "part_number": "2417750",
     "description": "Door brace",
-    "status": "weld"
+    "status": "part finish"
   },
   {
     "id": "86980kfbm",
     "part_number": "2217543/2217544",
     "description": "rubber bumper",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980keeb",
     "part_number": "2217543/2217544",
     "description": "clamp strip",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "86980kcrh",
     "part_number": "2217543/2217544",
     "description": "Rubber bumpers and bracket's",
-    "status": "rip"
+    "status": "complete"
   },
   {
     "id": "869805h6q",
@@ -381,108 +597,6 @@
     "id": "869804pbf",
     "part_number": "2417786",
     "description": "SENSOR PICK UP",
-    "status": "with sub-contractor"
-  },
-  {
-    "id": "8697zp20y",
-    "part_number": "2417786",
-    "description": "nylon",
-    "status": "complete"
-  },
-  {
-    "id": "8697zkmbg",
-    "part_number": "2417786",
-    "description": "FRONT SUBFRAME SUPPORT NYLON",
-    "status": "complete"
-  },
-  {
-    "id": "8697zk4mz",
-    "part_number": "2417786",
-    "description": "CABIN REST NYLON",
-    "status": "complete"
-  },
-  {
-    "id": "8697zhthw",
-    "part_number": "2417793",
-    "description": "BELT LOADER PS CHASSIS RHS FOLDED",
-    "status": "complete"
-  },
-  {
-    "id": "8697yjr37",
-    "part_number": "2417750",
-    "description": "360 DEG bonnet camera bracket",
-    "status": "complete"
-  },
-  {
-    "id": "8697y7unm",
-    "part_number": "2417786",
-    "description": "ENERGY CHAIN PACKER",
-    "status": "complete"
-  },
-  {
-    "id": "8697y7ceh",
-    "part_number": "2417773",
-    "description": "SHUTTER DOOR IMPACT PROTECTION ANGLE",
-    "status": "complete"
-  },
-  {
-    "id": "8697y4vc2",
-    "part_number": "2417688",
-    "description": "Cabin support torsion bar support",
-    "status": "complete"
-  },
-  {
-    "id": "8697y330j",
-    "part_number": "2417773",
-    "description": "FORD REAR WORKLIGHT PACKER",
-    "status": "complete"
-  },
-  {
-    "id": "8697y2z2b",
-    "part_number": "2417773",
-    "description": "FORD FRONT BUMPER SOCKET BKT",
-    "status": "complete"
-  },
-  {
-    "id": "8697y2wne",
-    "part_number": "2417786",
-    "description": "ENERGY CHAIN BRACKET PACKER",
-    "status": "complete"
-  },
-  {
-    "id": "8697xrn1b",
-    "part_number": "2417750",
-    "description": "De-icer tank Spacer (setting up Kanban for this)",
-    "status": "complete"
-  },
-  {
-    "id": "8697xmuw6",
-    "part_number": "2417688",
-    "description": "Rear Subframe",
-    "status": "complete"
-  },
-  {
-    "id": "8697xa53a",
-    "part_number": "N/A",
-    "description": "Cleaning Station Shadow Board",
-    "status": "with sub-contractor"
-  },
-  {
-    "id": "8697x97pj",
-    "part_number": "2417688",
-    "description": "platform support nylon",
-    "status": "complete"
-  },
-  {
-    "id": "8697x5zay",
-    "part_number": "2417688",
-    "description": "collision warning system limit switch bracket",
-    "status": "complete"
-  },
-  {
-    "id": "8697wyyzj",
-    "part_number": "N/A",
-    "description": "FLOOR MOUNTED MONITOR BRKT",
     "status": "with sub-contractor"
   }
 ]
