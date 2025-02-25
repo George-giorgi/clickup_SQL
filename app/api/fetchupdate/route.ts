@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { connectDB } from "@/app/lib/db";
+import sql from "mssql";
 import axios from "axios";
 import { getManufacturedPartsCosting } from "@/app/lib/costcalculate";
 interface ClickUpTask {
@@ -47,6 +49,8 @@ async function updateCustomField(taskId: string, fieldId: string, value: any) {
 
 export async function GET() {
   try {
+    const pool = await connectDB();
+    console.log("Connection successful!");
     const response = await axios.get<ClickUpTaskResponse>(
       `${BASE_URL}/list/${LIST_ID}/task`,
       {
@@ -66,17 +70,58 @@ export async function GET() {
           (field) => field.name === "Rework Cost"
         );
 
-        const partNumber: any = partNumberField?.value;
+        const partNumber: any = partNumberField?.value || 1;
         let reworkCost = reworkCostField?.value;
 
         // If "Rwk: Part Number" exists, query the database
         if (partNumber) {
-          const materialCost = await getManufacturedPartsCosting(partNumber, 0); // rev = 0
-          console.log(partNumber);
+          const partNo = partNumber; // Replace with your actual partNo value
+          const rev = "0"; // Replace with your actual rev value
+
+          const query = `
+            SELECT 
+              i."PartNo", 
+              i."Rev",
+              CASE 
+                WHEN m."MaterialClass" IN ('PL', 'PPL', 'WM', 'EM') 
+                THEN i."Weight" * ((m."Dim1" / 1000 * m."Dim2" / 1000) * (m."Dim3" / 1000) * m."MassDensity") * im."SourceCost"
+                WHEN m."MaterialClass" IN ('RB', 'SB', 'FL', 'AN', 'RT', 'CH', 'HS', 'UC', 'UB', 'WP', 'MLNG') 
+                THEN (i."Length" / m."Dim4") * im."SourceCost"
+                ELSE NULL
+              END AS "MaterialCost"
+            FROM "Item" i
+            LEFT JOIN "Material" m ON i."MaterialStandard" = m."PartNo"
+            LEFT JOIN "Item" im ON m."PartNo" = im."PartNo" 
+              AND im."Rev" = (
+                SELECT MAX(im2."Rev") 
+                FROM "Item" im2 
+                WHERE im2."PartNo" = im."PartNo"
+              )
+            WHERE i."PartNo" = @partNo
+              AND i."Rev" = @rev;
+          `;
+
+          // console.log(`Executing query for task ${task.id}...`);
+          // console.time("Query Execution Time"); // Start the timer
+          const result = await pool
+            .request()
+            .input("partNo", sql.VarChar, partNo)
+            .input("rev", sql.VarChar, rev)
+            .query(query);
+
+          // console.timeEnd("Query Execution Time"); // End the timer
+          // console.log(`Query executed for task ${task.id}`);
+          if (result.recordset.length === 0) {
+            console.error("No results found for part number:", partNumber);
+            return null; // Skip this task or handle it appropriately
+          }
+          const resultcost_value = result.recordset[0].MaterialCost;
+          // console.log(`Material cost for task ${task.id}:`, resultcost_value);
+
           // If a valid material cost is returned, update "Rework Cost"
-          if (materialCost !== null && reworkCostField) {
-            await updateCustomField(task.id, reworkCostField.id, materialCost);
-            reworkCost = materialCost; // Update the value in the response
+          if (result !== null && reworkCostField) {
+            await updateCustomField(task.id, reworkCostField.id, partNo);
+            reworkCost = resultcost_value; // Update the value in the response
           }
         }
 
