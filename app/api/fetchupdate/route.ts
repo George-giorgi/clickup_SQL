@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/app/lib/db";
 import sql from "mssql";
 import axios from "axios";
-import { getManufacturedPartsCosting } from "@/app/lib/costcalculate";
+
 interface ClickUpTask {
   id: string;
   name: string;
@@ -12,7 +12,7 @@ interface ClickUpTask {
   custom_fields: {
     id: string;
     name: string;
-    value: any; // Value can be a string, number, or object
+    value: any;
   }[];
 }
 
@@ -53,14 +53,12 @@ export async function GET() {
     console.log("Connection successful!");
     const response = await axios.get<ClickUpTaskResponse>(
       `${BASE_URL}/list/${LIST_ID}/task`,
-      {
-        headers: HEADERS,
-      }
+      { headers: HEADERS }
     );
 
     const tasks = response.data.tasks;
 
-    // Transform tasks and update "Rework Cost" based on "Rwk: Part Number"
+    // Process tasks and update "Rework Cost" if needed
     const transformedTasks = await Promise.all(
       tasks.map(async (task) => {
         const partNumberField = task.custom_fields.find(
@@ -73,10 +71,13 @@ export async function GET() {
         const partNumber: any = partNumberField?.value;
         let reworkCost = reworkCostField?.value;
 
-        // If "Rwk: Part Number" exists, query the database
-        if (partNumber) {
-          const partNo = partNumber; // Replace with your actual partNo value
-          const rev = "0"; // Replace with your actual rev value
+        // **Only proceed if "Rework Cost" is NOT already set**
+        if (partNumber && (reworkCost === null || reworkCost === undefined)) {
+          console.log(
+            `rewotk cost value ${reworkCostField?.value} number ${partNumber}`
+          );
+          const partNo = partNumber;
+          const rev = "0";
 
           const query = `
             SELECT 
@@ -101,32 +102,27 @@ export async function GET() {
               AND i."Rev" = @rev;
           `;
 
-          // console.log(`Executing query for task ${task.id}...`);
-          // console.time("Query Execution Time"); // Start the timer
           const result = await pool
             .request()
             .input("partNo", sql.VarChar, partNo)
             .input("rev", sql.VarChar, rev)
             .query(query);
 
-          // console.timeEnd("Query Execution Time"); // End the timer
-          // console.log(`Query executed for task ${task.id}`);
           if (result.recordset.length === 0) {
             console.error("No results found for part number:", partNumber);
-            return null; // Skip this task or handle it appropriately
+            return null;
           }
-          const resultcost_value = result.recordset[0].MaterialCost;
-          // console.log(`Material cost for task ${task.id}:`, resultcost_value);
-          // console.log(resultcost_value);
 
-          // If a valid material cost is returned, update "Rework Cost"
-          if (result !== null && reworkCostField) {
+          const resultCostValue = result.recordset[0].MaterialCost;
+
+          // **Only update if a valid material cost is found**
+          if (resultCostValue !== null && reworkCostField) {
             await updateCustomField(
               task.id,
               reworkCostField.id,
-              resultcost_value
+              resultCostValue
             );
-            reworkCost = resultcost_value; // Update the value in the response
+            reworkCost = resultCostValue;
           }
         }
 

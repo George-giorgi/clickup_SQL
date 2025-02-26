@@ -58,21 +58,21 @@ const TaskList = () => {
   }, [router]); // Depend on router to prevent unnecessary re-renders
 
   if (loading) {
-    return <p className="text-center text-gray-600">Loading tasks...</p>;
+    return <p className=" mt-80 text-center text-gray-200">Loading tasks...</p>;
   }
 
   if (error) {
-    return <p className="text-center text-red-500">Error: {error}</p>;
+    return <p className=" mt-80 text-center text-red-500">Error: {error}</p>;
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className=" mt-80  max-w-4xl mx-auto p-6">
       <h1 className="text-2xl font-bold text-center mb-4">Task List</h1>
-      <p className="text-center text-gray-500">
+      <p className="text-center text-gray-200">
         Last updated: {new Date(timestamp).toLocaleTimeString()}
       </p>
 
-      <table className="w-full border-collapse border border-gray-300 rounded-lg shadow-md mt-4">
+      {/* <table className="w-full border-collapse border border-gray-300 rounded-lg shadow-md mt-4">
         <thead className="bg-gray-200 text-gray-700">
           <tr>
             <th className="border border-gray-300 px-4 py-2 text-left">
@@ -120,7 +120,7 @@ const TaskList = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 };
