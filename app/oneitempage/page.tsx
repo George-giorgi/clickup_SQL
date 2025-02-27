@@ -56,6 +56,42 @@ const page = async (props: {
           </div>
         </Link>
       </div>
+      html Copy Edit
+      <svg width="200" height="200" viewBox="0 0 100 100">
+        <circle
+          cx="50"
+          cy="50"
+          r="45"
+          stroke="#ddd"
+          stroke-width="4"
+          fill="none"
+        />
+
+        <circle
+          cx="50"
+          cy="50"
+          r="45"
+          stroke="#000"
+          stroke-width="2"
+          fill="none"
+          stroke-dasharray="283"
+          stroke-dashoffset="283"
+          stroke-linecap="round"
+          transform="rotate(-90 50 50)"
+        >
+          <animate
+            attributeName="stroke-dashoffset"
+            from="283"
+            to="0"
+            dur="15s"
+            repeatCount="indefinite"
+          />
+        </circle>
+
+        <text x="50" y="55" font-size="12" text-anchor="middle" fill="#ffff">
+          10 min
+        </text>
+      </svg>
     </div>
   );
 };

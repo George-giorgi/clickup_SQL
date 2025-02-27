@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; // Import useRouter
+import { stringify } from "querystring";
 
 interface Task {
   id: string;
@@ -43,14 +44,14 @@ const TaskList = () => {
       setLoading(false);
     }
   };
-
+  const timer = 15000;
   useEffect(() => {
     fetchTasks(); // Initial fetch
     // const interval = setInterval(() => {
     //   console.log("Refreshing page and fetching new data...");
     //   router.refresh(); // Refresh the page
     //   fetchTasks(); // Fetch new data again after refresh
-    // }, 15000); // Refresh every 15 seconds
+    // }, timer); // Refresh every 15 seconds
     // return () => {
     //   console.log("Cleaning up interval...");
     //   clearInterval(interval);
@@ -58,19 +59,27 @@ const TaskList = () => {
   }, [router]); // Depend on router to prevent unnecessary re-renders
 
   if (loading) {
-    return <p className=" mt-80 text-center text-gray-200">Loading tasks...</p>;
+    return (
+      <p className=" flex justify-center items-center h-screen w-screen text-gray-200">
+        Loading tasks...
+      </p>
+    );
   }
 
   if (error) {
-    return <p className=" mt-80 text-center text-red-500">Error: {error}</p>;
+    return (
+      <p className=" flex justify-center items-center h-screen w-screen text-red-500">
+        Error: {error}
+      </p>
+    );
   }
 
   return (
-    <div className=" mt-80  max-w-4xl mx-auto p-6">
+    <div className="flex flex-col justify-center items-center h-screen w-screen">
       <h1 className="text-2xl font-bold text-center mb-4">Task List</h1>
-      <p className="text-center text-gray-200">
+      {/* <p className="text-center text-gray-200 font-semibold">
         Last updated: {new Date(timestamp).toLocaleTimeString()}
-      </p>
+      </p> */}
 
       {/* <table className="w-full border-collapse border border-gray-300 rounded-lg shadow-md mt-4">
         <thead className="bg-gray-200 text-gray-700">
@@ -121,6 +130,42 @@ const TaskList = () => {
           ))}
         </tbody>
       </table> */}
+      <svg width="200" height="200" viewBox="0 0 100 100">
+        <circle
+          cx="50"
+          cy="50"
+          r="45"
+          stroke="#ddd"
+          strokeWidth="4"
+          fill="none"
+        />
+
+        <circle
+          cx="50"
+          cy="50"
+          r="45"
+          stroke="#000"
+          strokeWidth="2"
+          fill="none"
+          strokeDasharray="283"
+          strokeDashoffset="283"
+          strokeLinecap="round"
+          transform="rotate(-90 50 50)"
+        >
+          <animate
+            attributeName="stroke-dashoffset"
+            from="283"
+            to="0"
+            // dur="15s"
+            dur={`${timer.toString().slice(0, -3)}s`}
+            repeatCount="indefinite"
+          />
+        </circle>
+
+        <text x="50" y="55" fontSize="7" textAnchor="middle" fill="white">
+          Last updated: {new Date(timestamp).toLocaleTimeString()}
+        </text>
+      </svg>
     </div>
   );
 };
